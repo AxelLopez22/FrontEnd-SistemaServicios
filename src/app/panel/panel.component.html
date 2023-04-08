@@ -1,0 +1,10 @@
+<app-header (menuClicked)="sideNav.toggle()" style="position: fixed; width: 100%;"></app-header>
+
+<mat-sidenav-container style="margin-top: 57px;">
+  <mat-sidenav mode="side" #sideNav opened class="mat-elevation-z6">
+    <app-side-nav></app-side-nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

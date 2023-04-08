@@ -1,0 +1,41 @@
+@import "../../../theme.scss";
+
+:host{
+  display: block;
+  padding: 2rem 1rem;
+}
+
+.titulo{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.centered-input {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+
+.table{
+  width: 100%;
+  overflow-x: auto;
+
+  table{
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .mat-cell,
+    .mat-header-cell{
+      font-size: 1.1rem;
+      &:is(.mat-header-cell){
+        font-style: italic;
+      }
+    }
+  }
+}

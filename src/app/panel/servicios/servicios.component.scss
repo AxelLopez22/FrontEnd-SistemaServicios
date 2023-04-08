@@ -1,0 +1,13 @@
+@import "../../theme.scss";
+
+:host{
+  display: block;
+  padding: 2rem 1rem;
+}
+
+mat-form-field{
+  width: 40%;
+  margin: 0 auto;
+  display: block;
+  transform: scale(1.1);
+}

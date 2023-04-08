@@ -1,0 +1,13 @@
+@import "../../../theme.scss";
+
+:host{
+  display: block;
+  padding: 2rem 1rem;
+}
+
+.titulo{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline" color="accent">
+  <mat-label>Buscar servicio</mat-label>
+  <input matInput (input)="search(searchField.value)" #searchField>
+  <button mat-icon-button matSuffix>
+    <mat-icon>search</mat-icon>
+  </button>
+</mat-form-field>
+<mat-divider></mat-divider>
