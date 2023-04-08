@@ -1,13 +1,31 @@
 @import "../../theme.scss";
 
-:host{
-  display: block;
-  padding: 2rem 1rem;
+.h1{
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
-mat-form-field{
-  width: 40%;
-  margin: 0 auto;
-  display: block;
-  transform: scale(1.1);
+
+.Telefonia-1 {
+  max-width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.Internet-1{
+  max-width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.Cable-1{
+  max-width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.Planes-1{
+  max-width: 400px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
