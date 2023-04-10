@@ -17,7 +17,7 @@ export class AuthServicesService {
 
   isAuthenticated():boolean{
     // @ts-ignore
-    return localStorage.getItem('user-info');
+    return localStorage.getItem('token');
   }
 
   getUsernameAuthenticated():string{

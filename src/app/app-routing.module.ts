@@ -5,8 +5,8 @@ import { LoginGuardGuard } from './auth/guard/login-guard.guard';
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin/panel', pathMatch:'full'},
-  {path: 'admin/panel', loadChildren: () => import('../app/panel/panel.module').then(x => x.PanelModule)},
-  {path: 'admin/auth', loadChildren: () => import('../app/auth/auth.module').then(x => x.AuthModule)}
+  {path: 'admin/panel', loadChildren: () => import('../app/panel/panel.module').then(x => x.PanelModule), canActivate: [CheckAuthGuardGuard]},
+  {path: 'admin/auth', loadChildren: () => import('../app/auth/auth.module').then(x => x.AuthModule), canActivate: [LoginGuardGuard]}
 ];
 
 @NgModule({

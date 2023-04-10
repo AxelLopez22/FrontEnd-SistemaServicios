@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         if(res.status === 'Ok'){
           this.saveToken.saveToken(res.data.token);
-          this.router.navigate(['admin/panel']);
+          this.router.navigate(['admin/panel/clientes']);
         } else {
           this.responseMsg = 'Credenciales invalidas';
         }
