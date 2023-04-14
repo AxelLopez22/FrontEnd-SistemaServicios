@@ -13,6 +13,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
 import { ServiciosComponent } from './servicios/servicios.component';
+import { CardServicioComponent } from './components/card-servicio/card-servicio.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ServiciosComponent } from './servicios/servicios.component';
     ClientesComponent,
     AddClienteComponent,
     EditClienteComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    CardServicioComponent
   ],
   imports: [
     CommonModule,

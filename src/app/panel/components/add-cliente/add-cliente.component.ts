@@ -27,7 +27,7 @@ export class AddClienteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ObtenerServicios();
+    //this.ObtenerServicios();
     this.breakpoint = (window.innerWidth <= 600) ? 2 : 6;
     this.clientesForm = this.initForm();
   }

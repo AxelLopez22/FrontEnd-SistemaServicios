@@ -45,3 +45,10 @@ export interface Planes{
   nombre: string,
   precio: number
 }
+
+export interface Servicio{
+  categoria: string,
+  nombre: string,
+  descripcion: string,
+  precio: number
+}
