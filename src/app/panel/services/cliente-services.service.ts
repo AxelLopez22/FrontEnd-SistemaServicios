@@ -13,7 +13,6 @@ export class ClienteServicesService {
   getClientes(){
     return this.http.get(this.UrlBase);
   }
-
   addCliente(model: CreateCliente){
     return this.http.post(this.UrlBase + '/CreateCliente', model);
   }
@@ -30,7 +29,4 @@ export class ClienteServicesService {
     return this.http.delete(this.UrlBase + '/delete/' + id);
   }
 
-  ListarServicio(){
-    return this.http.get('https://localhost:7128/api/Services/listarServicio');
-  }
 }

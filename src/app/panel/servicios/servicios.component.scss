@@ -1,12 +1,40 @@
 @import "../../theme.scss";
 
-:host{
-  display: block;
-  padding: 2rem 1rem;
+@media screen and (min-width: 696px) {
+  .container-cable{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }  
+  .cards{
+    margin: 1rem;
+    width: 350px;
+    justify-content: center;
+    max-width: 700px;
+  }
 }
 
-.cards{
-  display: flex;
-  position: relative;
-  flex-direction: row;
+@media screen and (max-width: 1200px) {
+  .container-cable{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }  
+  .cards{
+    margin: 1rem;
+    width: 350px;
+    justify-content: center;
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 696px) {
+  .container-cable{
+    display: grid;
+    grid-template-columns: 1fr;
+  }  
+  .cards{
+    margin: 1rem;
+    width: 350px;
+    justify-content: center;
+    max-width: 700px;
+  }
 }

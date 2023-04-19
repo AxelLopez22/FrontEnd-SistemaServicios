@@ -1,11 +1,7 @@
-<div class="" style="padding: 2rem;">
+<div class="" style="padding: 1rem;">
   <div class="container-cable" style="width: max-content;">
-    <h2 style="display: flex; justify-content: center; align-items: center;">Telefonia</h2>
-    <div class="cards" *ngFor="let element of [1,1,1,1]">
-      <app-card-servicio [cardService]="element"></app-card-servicio>
+    <div class="cards" cols="3" *ngFor="let cardService of service">
+      <app-card-servicio [cardService]="cardService"></app-card-servicio>
     </div>
   </div>
 </div>
-
-
-

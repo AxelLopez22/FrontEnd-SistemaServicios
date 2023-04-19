@@ -49,14 +49,14 @@ export class AddClienteComponent implements OnInit {
     this.breakpoint = (event.target.innerWidth <= 600) ? 2 : 6;
   }
 
-  ObtenerServicios(){
-    this.httpService.ListarServicio().subscribe((data: any) => {
-      console.log(data.data);
-      for(let element of data.data){
-        this.planes.push(element)
-      }
-    });
-  }
+  // ObtenerServicios(){
+  //   this.httpService.ListarServicio().subscribe((data: any) => {
+  //     console.log(data.data);
+  //     for(let element of data.data){
+  //       this.planes.push(element)
+  //     }
+  //   });
+  // }
 
   createCliente(){
     this.loader = true;

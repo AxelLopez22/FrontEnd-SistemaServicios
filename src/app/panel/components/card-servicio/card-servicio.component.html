@@ -2,22 +2,18 @@
   <div class="Telefonia-1">
   <mat-card>
     <mat-card-header>
-      <mat-card-title>Plan Pospago 25 GB</mat-card-title>
+      <mat-card-title>{{cardService.categoria}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>$ 21.99
+      <h1>{{cardService.nombre}}</h1>
+      <p>{{cardService.precio}}
       </p>
-      <ul>
-        <li>25 GB para navegar</li>
-        <li>70 minutos multidestino</li>
-        <li>SMS ilimitados</li>
-        <li>Minutos Tigo ilimitados</li>
-        <li>YouTube gratis</li>
-        <li>Tiktok gratis</li>
-      </ul>
+      <p>{{cardService.descripcion}}</p>
     </mat-card-content>
-
-
   </mat-card>
   </div>
 </div>
+
+
+
+
