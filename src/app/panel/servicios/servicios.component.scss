@@ -1,40 +1,81 @@
 @import "../../theme.scss";
 
-@media screen and (min-width: 696px) {
-  .container-cable{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }  
-  .cards{
-    margin: 1rem;
-    width: 350px;
-    justify-content: center;
-    max-width: 700px;
+:host{
+  display: block;
+  padding: 2rem 1rem;
+}
+
+.titulo{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+mat-card{
+  width: max-content;
+  margin-bottom: 1rem;
+  mat-card-content{
+    font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .container-cable{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }  
-  .cards{
-    margin: 1rem;
-    width: 350px;
-    justify-content: center;
-    max-width: 700px;
+mat-paginator{
+  background-color: #fafafa;
+}
+
+.table{
+  width: 100%;
+  overflow-x: auto;
+
+  table{
+    width: 100%;
+
+    .mat-cell,
+    .mat-header-cell{
+      font-size: 1.1rem;
+      &:is(.mat-header-cell){
+        font-style: italic;
+      }
+    }
   }
 }
 
-@media screen and (max-width: 696px) {
-  .container-cable{
-    display: grid;
-    grid-template-columns: 1fr;
-  }  
-  .cards{
-    margin: 1rem;
-    width: 350px;
-    justify-content: center;
-    max-width: 700px;
+@media screen and (max-width: 768px) {
+  div .addBtn{
+    text-align: center;
   }
 }
+
+@media screen and (max-width: 320px) {
+
+}
+
+
+// @media screen and (max-width: 1200px) {
+//   .container-cable{
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+//   .cards{
+//     margin: 1rem;
+//     width: 350px;
+//     justify-content: center;
+//     max-width: 700px;
+//   }
+// }
+
+// @media screen and (max-width: 696px) {
+//   .container-cable{
+//     display: grid;
+//     grid-template-columns: 1fr;
+//   }
+//   .cards{
+//     margin: 1rem;
+//     width: 350px;
+//     justify-content: center;
+//     max-width: 700px;
+//   }
+// }

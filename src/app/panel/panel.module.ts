@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { PanelRoutingModule } from './panel-routing.module';
 import { PanelComponent } from './panel.component';
@@ -14,6 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
 import { ServiciosComponent } from './servicios/servicios.component';
 import { CardServicioComponent } from './components/card-servicio/card-servicio.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LimitarDigitosDirective } from './directive/limitar-digitos.directive';
+import { InicioComponent } from './inicio/inicio.component';
+import { FooterComponent } from './footer/footer.component';
+import { AddPlanComponent } from './components/add-plan/add-plan.component';
+import { EditPlanComponent } from './components/edit-plan/edit-plan.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,12 @@ import { CardServicioComponent } from './components/card-servicio/card-servicio.
     AddClienteComponent,
     EditClienteComponent,
     ServiciosComponent,
-    CardServicioComponent
+    CardServicioComponent,
+    LimitarDigitosDirective,
+    InicioComponent,
+    FooterComponent,
+    AddPlanComponent,
+    EditPlanComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +44,9 @@ import { CardServicioComponent } from './components/card-servicio/card-servicio.
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgxSpinnerModule,
     ToastrModule.forRoot(),
-  ]
+  ],
+  providers:[DatePipe]
 })
 export class PanelModule { }

@@ -1,10 +1,18 @@
-<app-header (menuClicked)="sideNav.toggle()" style="position: fixed; width: 100%;"></app-header>
+<app-header (menuClicked)="sideNav.toggle()" style="position: fixed; width: 100%; box-shadow: 5px 5px 10px #34495E;"></app-header>
+
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box"
+             [fullScreen]="true"><p style="color: white; font-weight: bold;"> Cargando... </p></ngx-spinner>
+
 
 <mat-sidenav-container style="margin-top: 57px;">
-  <mat-sidenav mode="side" #sideNav opened class="mat-elevation-z6">
+  <mat-sidenav mode="over" #sideNav class="mat-elevation-z8" style="width: 200px;">
     <app-side-nav></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<app-footer></app-footer>
+
+

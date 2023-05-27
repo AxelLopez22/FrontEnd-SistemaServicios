@@ -9,20 +9,24 @@ import { SideNavItem } from '../models/models';
 export class SideNavComponent {
   sideNavContent: SideNavItem[] = [
     {
+      tittle: 'Inicio',
+      link: 'inicio',
+      icon: 'home'
+    },
+    {
       tittle: 'Clientes',
-      link: 'clientes'
+      link: 'clientes',
+      icon: 'recent_actors'
     },
     {
       tittle: 'Servicios',
-      link: 'servicios'
+      link: 'servicios',
+      icon: 'business'
     },
     {
-      tittle: 'Usuarios',
-      link: 'usuarios'
-    },
-    {
-      tittle: 'Configuracion',
-      link: 'configuracion'
+      tittle: 'Pagos',
+      link: 'pagos',
+      icon: 'monetization_on'
     }
   ];
 }

@@ -1,36 +1,39 @@
 <div class="login">
+
+  <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="square-jelly-box"
+                 [fullScreen]="true"><p style="color: white; font-weight: bold;"> Cargando... </p></ngx-spinner>
+
   <h1>Login</h1>
+  <div class="sectionForm">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-grid-list cols="2" rowHeight="100px" gutterSize="10px">
+        <mat-grid-tile colspan="2">
+          <mat-form-field appearance="fill" color="primary">
+            <mat-label>UserName</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="this.Email.invalid">{{getUserNameErrors()}}</mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
 
-<form [formGroup]="loginForm" (ngSubmit)="login()">
-  <mat-grid-list cols="2" rowHeight="100px" gutterSize="10px">
-    <mat-grid-tile colspan="2">
-      <mat-form-field appearance="fill" color="accent">
-        <mat-label>UserName</mat-label>
-        <input matInput formControlName="email">
-        <mat-error *ngIf="this.Email.invalid">{{getUserNameErrors()}}</mat-error>
-      </mat-form-field>
-    </mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <mat-form-field appearance="fill" color="primary">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+            <!-- <button mat-icon-button matSuffix (click)="hide = !hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button> -->
+            <mat-error *ngIf="this.Password.invalid">{{getPasswordErrors()}}</mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
 
-    <mat-grid-tile colspan="2">
-      <mat-form-field appearance="fill" color="accent">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
-        <button mat-icon-button matSuffix (click)="hide = !hide">
-          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-        <mat-error *ngIf="this.Password.invalid">{{getPasswordErrors()}}</mat-error>
-      </mat-form-field>
-    </mat-grid-tile>
-
-    <mat-grid-tile colspan="2">
-      <button mat-flat-button color="accent" class="login-btn" [disabled]="this.loginForm.invalid">
-        Login
-      </button>
-    </mat-grid-tile>
-  </mat-grid-list>
-</form>
-
-
+        <mat-grid-tile colspan="2">
+          <button mat-flat-button color="primary" class="login-btn" [disabled]="this.loginForm.invalid">
+            Login
+          </button>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </div>
 <!-- <div class="login-link">
   <span>Don't have an account?</span>
   <button mat-stroked-button color="accent" routerLink="/register">Create Account</button>

@@ -3,6 +3,11 @@
   z-index: 3;
 }
 
+h1{
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
 mat-toolbar{
   display: flex;
   justify-content: space-between;
@@ -19,7 +24,7 @@ mat-toolbar{
   }
 }
 
-@media screen and (max-width: 470px) {
+@media screen and (max-width: 600px) {
   h1{
     display: none;
   }

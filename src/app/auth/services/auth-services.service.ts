@@ -22,7 +22,7 @@ export class AuthServicesService {
 
   getUsernameAuthenticated():string{
     const user_info = JSON.parse( localStorage.getItem('user-info') || '{}' );
-    return user_info.nombreUsuario
+    return user_info;
   }
 
 

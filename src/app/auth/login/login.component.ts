@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from 'src/app/panel/models/models';
 import { UserService } from 'src/app/panel/services/user.service';
 import { AuthServicesService } from '../services/auth-services.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   responseMsg: string = '';
 
   constructor(private fb: FormBuilder, private route: Router, private httpService: UserService, private saveToken: AuthServicesService,
-    private router: Router){
+    private router: Router, private spinner: NgxSpinnerService){
     this.loginForm = this.fb.group({
       email: fb.control('', [Validators.required]),
       password: fb.control('', [
@@ -39,10 +40,14 @@ export class LoginComponent implements OnInit {
 
     this.httpService.login(user).subscribe({
       next: (res:any) => {
-        console.log(res);
+        this.spinner.show();
         if(res.status === 'Ok'){
           this.saveToken.saveToken(res.data.token);
-          this.router.navigate(['admin/panel/clientes']);
+          localStorage.setItem("user-info",JSON.stringify(user.nombreUsuario))
+          setTimeout(() => {
+            this.spinner.hide()
+            this.router.navigate(['admin/panel/inicio']);
+          }, 2000);
         } else {
           this.responseMsg = 'Credenciales invalidas';
         }

@@ -1,0 +1,74 @@
+<mat-spinner style="display: flex; margin: 10rem auto;" *ngIf="loader; else addPlan"></mat-spinner>
+
+<ng-template #addPlan>
+  <mat-card>
+    <div style="padding: 20px;">
+      <span class="titulo">Nuevo Plan</span>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div>
+      <form [formGroup]="planForm" (ngSubmit)="CrearPlan()">
+        <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="70px" gutterSize="10px" style="margin: 10px;">
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+              <mat-label>Nombre</mat-label>
+              <input type="text" matInput formControlName="nombre">
+              <mat-hint style="color: red;font-size: 13px"
+              *ngIf="planForm.get('nombre')?.touched && planForm.get('nombre')?.errors?.['required']">
+               Nombre del plan es requerido
+              </mat-hint>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+              <mat-label>Precio</mat-label>
+              <input type="number" matInput formControlName="precio">
+              <mat-hint style="color: red;font-size: 13px"
+              *ngIf="planForm.get('precio')?.touched && planForm.get('precio')?.errors?.['required']">
+               Debe ingresar el precio $
+              </mat-hint>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="2">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%; height: 100%;">
+              <mat-label>Descripcion</mat-label>
+              <textarea type="text" matInput formControlName="descripcion"></textarea>
+              <mat-hint style="color: red;font-size: 13px"
+              *ngIf="planForm.get('descripcion')?.touched && planForm.get('descripcion')?.errors?.['required']">
+               Debe describir el plan (100 caracteres maximo)
+              </mat-hint>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+              <mat-label>Categoria</mat-label>
+              <mat-select [(ngModel)]="selectedValue" name="food" [formControl]="$any(planForm).controls['precio']">
+                <mat-option *ngFor="let item of categoriaServicios" [value]="item.id">
+                  {{item.nombre}}
+                </mat-option>
+              </mat-select>
+              <mat-hint style="color: red;font-size: 13px"
+              *ngIf="planForm.get('idServicio')?.touched && planForm.get('idServicio')?.errors?.['required']">
+               Debe seleccionar la categoria
+              </mat-hint>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <div style="width: 100%; height: 100%;">
+              <button mat-flat-button color="primary" type="submit" style="display: flex; margin: auto;"
+                  [disabled]="planForm.invalid" class="create-account-btn">
+                  Agregar
+              </button>
+          </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </form>
+    </div>
+  </mat-card>
+</ng-template>

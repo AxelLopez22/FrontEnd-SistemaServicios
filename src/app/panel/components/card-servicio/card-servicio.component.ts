@@ -10,22 +10,22 @@ import { ServicesService } from '../../services/services.service';
   styleUrls: ['./card-servicio.component.scss']
 })
 export class CardServicioComponent implements OnInit {
-  @Input() cardService: Servicio = {
-    categoria: '',
-    nombre: '',
-    descripcion: '',
-    precio: 0
-  }
-  
-  
+  // @Input() cardService: Servicio = {
+  //   categoria: '',
+  //   nombre: '',
+  //   descripcion: '',
+  //   precio: 0
+  // }
+
+
 
   constructor(){
 
   }
-  
+
   ngOnInit(): void {
-    
+
   }
 
-  
+
 }

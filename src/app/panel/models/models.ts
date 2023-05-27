@@ -1,17 +1,15 @@
 export interface SideNavItem{
   tittle: string;
   link: string;
+  icon: string;
 }
 
 export interface Clientes{
   id: number,
   nombres: string,
   apellidos: string,
-  correo: string,
   celular: number,
-  inss: string,
-  cedula: string,
-  fechaNacimiento: Date,
+  servicio: string
   direccion: string
 }
 
@@ -22,8 +20,8 @@ export interface CreateCliente{
   celular: number,
   inss: string,
   cedula: string,
-  fechaNacimiento: Date,
-  direccion: string
+  direccion: string,
+  idPlan: number
 }
 
 export interface EditCliente{
@@ -31,7 +29,8 @@ export interface EditCliente{
   apellidos: string,
   correo: string,
   celular: number,
-  direccion: string
+  direccion: string,
+  idServicio: number
 }
 
 export interface User{
@@ -40,15 +39,48 @@ export interface User{
 }
 
 export interface Planes{
+  id: number,
   categoria: string,
   descripcion: string,
   nombre: string,
-  precio: number
+  precio: number,
+  avialable: boolean
 }
 
 export interface Servicio{
+  id: number,
   categoria: string,
   nombre: string,
   descripcion: string,
   precio: number
+}
+
+export interface updateServiceUser{
+  id: number,
+  nombre: string
+}
+
+export interface carouselImages{
+  id: number,
+  title?: {
+    first: string,
+    second:string
+  },
+  subtitle?: string,
+  link?: string,
+  image: string,
+  order?: number,
+  marginLeft: number
+}
+
+export interface categoriaServicios{
+  id: number,
+  nombre: string
+}
+
+export interface CrearPlan{
+  nombre: string,
+  descripcion: string,
+  precio: number,
+  idServicio: number
 }
