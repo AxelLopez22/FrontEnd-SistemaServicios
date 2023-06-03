@@ -1,0 +1,36 @@
+@import "../../theme.scss";
+
+:host{
+  display: block;
+  padding: 2rem 1rem;
+}
+
+.titulo{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+mat-paginator{
+  background-color: #fafafa;
+}
+
+.table{
+  width: 100%;
+  overflow-x: auto;
+
+  table{
+    width: 100%;
+
+    .mat-cell,
+    .mat-header-cell{
+      font-size: 1.1rem;
+      &:is(.mat-header-cell){
+        font-style: italic;
+      }
+    }
+  }
+}

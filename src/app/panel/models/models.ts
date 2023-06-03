@@ -84,3 +84,40 @@ export interface CrearPlan{
   precio: number,
   idServicio: number
 }
+
+export interface EditarPlan{
+  nombre: string,
+  descripcion: string,
+  precio: number,
+}
+
+export interface VerPagosClientes{
+  id: number,
+  cliente: string,
+  monto: number,
+  mes: string,
+  idServicio: number,
+  servicio: string
+}
+
+export interface Usuarios{
+  id: number,
+  cliente: string
+}
+
+export interface AgregarPago{
+  total: number,
+  mes: string,
+  idClienteServicio: number
+}
+
+export interface MesesPagos{
+  mes: string,
+  fechaPago: Date
+}
+
+export interface HistorialPagosClientes{
+  cliente: string,
+  plan: string,
+  pagos: MesesPagos[]
+}

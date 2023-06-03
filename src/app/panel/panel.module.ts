@@ -20,6 +20,9 @@ import { InicioComponent } from './inicio/inicio.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddPlanComponent } from './components/add-plan/add-plan.component';
 import { EditPlanComponent } from './components/edit-plan/edit-plan.component';
+import { PagosComponent } from './pagos/pagos.component';
+import { AddPagoComponent } from './components/add-pago/add-pago.component';
+import { VerpagosComponent } from './components/verpagos/verpagos.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { EditPlanComponent } from './components/edit-plan/edit-plan.component';
     InicioComponent,
     FooterComponent,
     AddPlanComponent,
-    EditPlanComponent
+    EditPlanComponent,
+    PagosComponent,
+    AddPagoComponent,
+    VerpagosComponent
   ],
   imports: [
     CommonModule,

@@ -8,6 +8,9 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AddPlanComponent } from './components/add-plan/add-plan.component';
 import { EditPlanComponent } from './components/edit-plan/edit-plan.component';
+import { PagosComponent } from './pagos/pagos.component';
+import { AddPagoComponent } from './components/add-pago/add-pago.component';
+import { VerpagosComponent } from './components/verpagos/verpagos.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin/panel', pathMatch: 'full'},
@@ -18,7 +21,10 @@ const routes: Routes = [
     {path: 'clientes/edit/:id', component: EditClienteComponent},
     {path: 'servicios', component: ServiciosComponent},
     {path: 'servicios/create', component: AddPlanComponent},
-    {path: 'servicios/edit/:id', component: EditPlanComponent}
+    {path: 'servicios/edit/:id', component: EditPlanComponent},
+    {path: 'pagos', component: PagosComponent},
+    {path: 'pagos/create', component: AddPagoComponent},
+    {path: 'pagos/verPagos/:id', component: VerpagosComponent}
   ]}
 ];
 

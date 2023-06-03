@@ -1,0 +1,63 @@
+<mat-spinner style="display: flex; margin: 10rem auto;" *ngIf="loader; else addPago"></mat-spinner>
+
+
+<ng-template #addPago>
+  <mat-card>
+    <div style="padding: 20px;">
+      <span class="titulo">Registrar Pago</span>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div style="margin-top: 10px;">
+      <form [formGroup]="addPagoForm">
+        <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)" rowHeight="70px" gutterSize="10px" style="margin: 10px;">
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field class="example-full-width" appearance="fill" style="width: 100%;">
+              <mat-label>Cliente</mat-label>
+              <input type="text" matInput [formControl]="$any(addPagoForm).controls['idCliente']" [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onSelection($event)">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option.cliente}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field appearance="fill" style="width: 100%;">
+                <mat-label>Mes</mat-label>
+                <mat-select name="food" [formControl]="$any(addPagoForm).controls['mesPago']">
+                  <mat-option *ngFor="let item of Meses" [value]="item">
+                    {{item}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="2">
+            <mat-form-field appearance="fill" color="primary" style="width: 100%; height: 100%;">
+              <mat-label>Plan</mat-label>
+              <textarea style="height: 100%;" [value]="selectedValuePlan" matInput formControlName="plan" [formControl]="$any(addPagoForm).controls['plan']" readonly></textarea>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <mat-form-field appearance="fill" color="primary" style="width: 100%; min-height: 100%;">
+              <mat-label>Costo</mat-label>
+              <input type="number" matInput [value]="selectedValue" [formControl]="$any(addPagoForm).controls['precio']" readonly>
+            </mat-form-field>
+          </mat-grid-tile>
+
+          <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <div style="width: 100%; text-align: center;">
+              <button mat-raised-button [disabled]="addPagoForm.invalid" color="primary" (click)="AgregarPago()">Agregar Pago</button>
+            </div>
+          </mat-grid-tile>
+
+        </mat-grid-list>
+      </form>
+    </div>
+
+  </mat-card>
+</ng-template>

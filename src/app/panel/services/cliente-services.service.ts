@@ -6,7 +6,8 @@ import { CreateCliente, EditCliente } from '../models/models';
   providedIn: 'root'
 })
 export class ClienteServicesService {
-  UrlBase: string = "https://localhost:7128/api/Cliente";
+  UrlBase: string = "http://www.sistema-servicios-api.somee.com/api/Cliente"
+  //UrlBase: string = "https://localhost:7128/api/Cliente";
 
   constructor(private http: HttpClient) { }
 
@@ -29,4 +30,11 @@ export class ClienteServicesService {
     return this.http.delete(this.UrlBase + '/delete/' + id);
   }
 
+  ListarClientes(){
+    return this.http.get(this.UrlBase + '/ListarClientes');
+  }
+
+  GetPlanPayment(id: number){
+    return this.http.get(this.UrlBase + '/GetPlanPayment/' + id);
+  }
 }

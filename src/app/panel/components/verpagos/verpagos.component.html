@@ -1,0 +1,35 @@
+<mat-card>
+  <div style="padding: 20px;">
+    <span class="titulo">Lista de Pagos</span>
+  </div>
+
+  <mat-divider style="padding-bottom: 10px;"></mat-divider>
+
+  <div class="user-section row">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <span>Cliente</span>
+      <div>
+        <p>{{historial?.cliente}}</p>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <span>Servicio</span>
+      <div>
+        <p>{{historial?.plan}}</p>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" style="max-height: 500px; overflow-y: auto;">
+      <span>Meses</span>
+      <div *ngFor="let element of historial?.pagos" style="border-bottom: 1px solid black; margin: 1rem;">
+        <p><strong>Fecha pago:&nbsp;</strong>{{element.fechaPago | date:'short'}}</p>
+        <p><strong>Mes Pagado:&nbsp;</strong>{{element.mes}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-button">
+    <button class="button" mat-raised-button>Atras</button>
+  </div>
+</mat-card>

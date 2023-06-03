@@ -90,8 +90,6 @@ export class EditClienteComponent implements OnInit, AfterViewInit {
   getClienteById(){
     this.httpService.getClienteId(this.idCliente).subscribe({
       next: (res:any) => {
-        console.log(res);
-
         this.clientesEditForm.get('nombres')?.setValue(res.data.nombres);
         this.clientesEditForm.get('apellidos')?.setValue(res.data.apellidos);
         this.clientesEditForm.get('direccion')?.setValue(res.data.direccion);

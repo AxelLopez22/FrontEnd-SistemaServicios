@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PanelModule } from './panel/panel.module';
 import { AuthModule } from './auth/auth.module';
 import { MaterialModule } from './material/material.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptInterceptor } from './auth/intercept.interceptor';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -18,9 +21,18 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     PanelModule,
     AuthModule,
-    MaterialModule
+    MaterialModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('token');
+        }
+      }
+    })
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
