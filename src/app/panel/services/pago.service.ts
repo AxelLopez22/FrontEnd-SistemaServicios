@@ -6,7 +6,7 @@ import { AgregarPago } from '../models/models';
   providedIn: 'root'
 })
 export class PagoService {
-  url = "http://www.sistema-servicios-api.somee.com/api/Pago"
+  url = "https://www.sistema-servicios-api.somee.com/api/Pago"
   //url = "https://localhost:7128/api/Pago";
 
   constructor(private http: HttpClient) { }

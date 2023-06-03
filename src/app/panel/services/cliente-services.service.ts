@@ -6,7 +6,7 @@ import { CreateCliente, EditCliente } from '../models/models';
   providedIn: 'root'
 })
 export class ClienteServicesService {
-  UrlBase: string = "http://www.sistema-servicios-api.somee.com/api/Cliente"
+  UrlBase: string = "https://www.sistema-servicios-api.somee.com/api/Cliente"
   //UrlBase: string = "https://localhost:7128/api/Cliente";
 
   constructor(private http: HttpClient) { }

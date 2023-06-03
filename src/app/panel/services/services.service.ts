@@ -6,7 +6,7 @@ import { CrearPlan, EditarPlan } from '../models/models';
   providedIn: 'root'
 })
 export class ServicesService {
-  UrlBase: string = "http://www.sistema-servicios-api.somee.com/api/Services"
+  UrlBase: string = "https://www.sistema-servicios-api.somee.com/api/Services"
   //UrlBase: string = "https://localhost:7128/api/Services";
   constructor(private http: HttpClient) { }
 
